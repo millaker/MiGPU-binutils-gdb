@@ -1489,6 +1489,7 @@ static struct riscv_supported_ext riscv_supported_vendor_x_ext[] =
   {"xventanacondops",	ISA_SPEC_CLASS_DRAFT,	1, 0, 0 },
   {"xsfvcp",		ISA_SPEC_CLASS_DRAFT,	1, 0, 0 },
   {"xsfcease",		ISA_SPEC_CLASS_DRAFT,	1, 0, 0 },
+  {"xmigpu", ISA_SPEC_CLASS_DRAFT, 1, 0, 0},
   {NULL, 0, 0, 0, 0}
 };
 
@@ -2768,6 +2769,8 @@ riscv_multi_subset_supports (riscv_parse_subset_t *rps,
       return riscv_subset_supports (rps, "xsfvcp");
     case INSN_CLASS_XSFCEASE:
       return riscv_subset_supports (rps, "xsfcease");
+    case INSN_CLASS_XMIGPU:
+      return riscv_subset_supports(rps, "xmigpu");
     default:
       rps->error_handler
         (_("internal: unreachable INSN_CLASS_*"));
@@ -3044,6 +3047,8 @@ riscv_multi_subset_supports_ext (riscv_parse_subset_t *rps,
       return "xtheadzvamo";
     case INSN_CLASS_XSFCEASE:
       return "xsfcease";
+    case INSN_CLASS_XMIGPU:
+      return "xmigpu";
     default:
       rps->error_handler
         (_("internal: unreachable INSN_CLASS_*"));

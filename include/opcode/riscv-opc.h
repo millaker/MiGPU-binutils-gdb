@@ -3297,6 +3297,15 @@
 /* Vendor-specific (SiFive) cease instruction.  */
 #define MATCH_SF_CEASE 0x30500073
 #define MASK_SF_CEASE 0xffffffff
+
+/* MiGPU instructions */
+#define MATCH_MI_SPLIT 0x0000000b
+#define MASK_MI_SPLIT 0xfff07fff
+#define MATCH_MI_JOIN 0x0000100b
+#define MASK_MI_JOIN 0xffffffff
+#define MATCH_MI_BARRIER 0x0000200b
+#define MASK_MI_BARRIER 0xffffffff
+
 /* Unprivileged Counter/Timers CSR addresses.  */
 #define CSR_CYCLE 0xc00
 #define CSR_TIME 0xc01

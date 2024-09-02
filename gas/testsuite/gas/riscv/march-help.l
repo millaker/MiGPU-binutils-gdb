@@ -154,3 +154,4 @@ All available -march extensions for RISC-V:
 	xventanacondops                         1.0
 	xsfvcp                                  1.0
 	xsfcease                                1.0
+	xmigpu                                  1.0
